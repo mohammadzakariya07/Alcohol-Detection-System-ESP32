@@ -1,0 +1,11 @@
+🔍 Working Principle
+
+MQ-3 produces an analog voltage based on alcohol concentration.
+
+ESP32 reads this on ADC pin 34.
+
+If value > threshold → Motor turns OFF (Relay HIGH).
+
+If value < threshold → Motor turns ON (Relay LOW).
+
+OLED and Serial Monitor both show current value and status.
