@@ -1,0 +1,25 @@
+ +5V supply ----------------+-----------------+----------------+
+                           |                 |                |
+                          MQ3 VCC         Relay VCC      ESP32 VIN (optional)
+                           |                 |                |
+                          MQ3 Heater         |             (or power ESP32 via USB)
+                           |                 |                |
+MQ3 AOUT ---[10k]---+---- ADC GPIO34
+                   |
+                  [20k]
+                   |
+                  GND ---------------------------- GND (common) ---- ESP32 GND
+
+SSD1306:
+  3.3V --> OLED VCC
+  GND  --> OLED GND
+  GPIO21 --> OLED SDA
+  GPIO22 --> OLED SCL
+
+Relay module IN  --> GPIO27
+Relay module VCC --> +5V
+Relay module GND --> GND
+
+(If discrete relay: Relay coil + --> +5V, coil - --> transistor collector.
+ transistor emitter --> GND. base resistor 1k between GPIO27 and base.
+ diode across coil (cathode to +5V, anode to collector).)
